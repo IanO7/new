@@ -1,0 +1,259 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #666;
+}
+
+p {
+    font-size: 1em;
+    color: #333;
+}
+
+.weather, .air-quality, .sun-times, .date-time, .plane-tracker {
+    background-color: #e5f2f7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved Sunrise & Sunset Styling */
+.sun-times {
+    background-color: #e5f2f7;  /* Keeping your existing color */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+/* Weather Card Styling */
+.weather-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #e5f2f7; /* Light blue background */
+    border-radius: 8px;
+}
+
+.weather-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Adjust spacing between icon and text */
+}
+
+.weather-icon i {
+    font-size: 2.5em;
+    color: #ffcc00; /* Yellow color for sunny icon */
+}
+
+.weather-info {
+    text-align: center;
+}
+
+.weather-info h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.weather-info p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+/* Emergency Alert Styling */
+.emergency-alert {
+    grid-column: span 2;
+    background-color: #f8d7da;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-alert h2 {
+    color: #721c24;
+}
+
+#alert-text {
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* AQI Progress Bar Styles */
+.aqi-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 15px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.aqi-progress {
+    height: 100%;
+    width: 0; /* Default, dynamically updated */
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+#aqi-status {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Date & Time Styling */
+.date-time {
+    text-align: center;
+}
+
+#current-time p {
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+}
+
+#current-date p {
+    font-size: 1.2em;
+    color: #888;
+}
+
+/* Button Styles */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.wide-button {
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    width: 100%;
+    max-width: 400px; /* Maximum width for the button */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wide-button:hover {
+    background-color: #45a049;
+}
+
+/* Style for the Plane Tracker container */
+.plane-tracker {
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    max-width: 1000px; /* Increased width of container */
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  
+  .plane-tracker i {
+    font-size: 40px;
+    color: #00aaff;
+  }
+  
+  .plane-tracker span {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #333;
+  }
+  
+  /* Style for the container of flight cards */
+  #top-flights {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-between; /* Distribute the space evenly between cards */
+    gap: 20px; /* Add some space between cards */
+    flex-wrap: nowrap; /* Prevent wrapping, keep them in a single row */
+    margin-top: 20px;
+  }
+  
+  /* Style for each flight card */
+  .flight-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Set a fixed width for each card */
+    transition: transform 0.3s ease;
+    flex: 0 0 auto; /* Prevent flex-grow and flex-shrink, keep the card size fixed */
+  }
+  
+  .flight-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .flight-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .flight-card p {
+    font-size: 18px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .flight-card strong {
+    color: #00aaff;
+  }
+/* Adjust gap between cards */
+#top-flights {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Decrease the gap between the cards */
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+
+
